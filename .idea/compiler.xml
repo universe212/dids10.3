@@ -9,5 +9,9 @@
         <module name="untitled" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ddc.did.sdk" target="1.8" />
+      <module name="did-sdk" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -9,14 +9,36 @@ import it.unisa.dia.gas.plaf.jpbc.pairing.a.TypeACurveGenerator;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 /**
  * 最终实验
  */
 public class UDVSExample {
+
+
+
+
+    public static void createKeyPair() {
+        // 创建DidClient实例：
+        String URL = "https://didservice.bsngate.com:18602";
+        String PROJECTID = "8320935187";
+        String TOKEN = "3wxYHXwAm57grc9JUr2zrPHt9HC";
+        DidClient didClient = new DidClient(URL, PROJECTID, TOKEN);
+
+        // 生成公私钥对
+        com.reddate.did.sdk.param.KeyPair keyPair = Secp256Util.createKeyPair(didClient.getHubCryptoType());
+
+        // 打印公私钥
+        System.out.println("Private Key: " + keyPair.getPrivateKey());
+        System.out.println("Public Key: " + keyPair.getPublicKey());
+        System.out.println("Key Type: " + keyPair.getType());
+    }
+
+
+
 
     private static final int rBits = 160;
     private static final int qBits = 512;
