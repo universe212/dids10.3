@@ -10,6 +10,8 @@ import com.reddate.did.sdk.protocol.common.PublicKey;
 
 import org.apache.commons.lang3.StringUtils;
 
+import static org.bouncycastle.asn1.x500.style.RFC4519Style.cn;
+
 /**
  * 
  * Did utils class,

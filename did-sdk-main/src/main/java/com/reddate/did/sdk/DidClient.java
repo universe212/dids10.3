@@ -53,7 +53,11 @@ public class DidClient {
 	public DidClient() {
 		didService = new DidService(DID_SERVICE_URL, DID_SERVICE_PROJECT_ID, DID_SERVICE_TOKEN); 
 	}
-	
+
+	public DidClient(String url, String projectid, String token) {
+
+	}
+
 	/**
 	 * 
 	 * Create did document and store this document on block chain if choose store on block chain.

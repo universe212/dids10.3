@@ -1,5 +1,9 @@
 package org.example.z;
 
+import com.reddate.did.sdk.DidClient;
+import com.reddate.did.sdk.param.resp.DidDataWrapper;
+import com.reddate.did.sdk.protocol.common.DidDocument;
+import com.reddate.did.sdk.protocol.common.Proof;
 import it.unisa.dia.gas.jpbc.Element;
 import it.unisa.dia.gas.jpbc.Pairing;
 import it.unisa.dia.gas.jpbc.PairingParameters;
@@ -27,15 +31,11 @@ public class UDVSExample {
         String PROJECTID = "8320935187";
         String TOKEN = "3wxYHXwAm57grc9JUr2zrPHt9HC";
         DidClient didClient = new DidClient(URL, PROJECTID, TOKEN);
+        DidDataWrapper didData = didClient.createDid();
+        String did = didData.getDid();
 
-        // 生成公私钥对
-        com.reddate.did.sdk.param.KeyPair keyPair = Secp256Util.createKeyPair(didClient.getHubCryptoType());
-
-        // 打印公私钥
-        System.out.println("Private Key: " + keyPair.getPrivateKey());
-        System.out.println("Public Key: " + keyPair.getPublicKey());
-        System.out.println("Key Type: " + keyPair.getType());
     }
+//验证DID Document
 
 
 

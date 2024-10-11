@@ -36,6 +36,8 @@ import com.reddate.did.sdk.util.DidUtils;
 import com.reddate.did.sdk.util.ECDSAUtils;
 import com.reddate.did.sdk.util.HttpUtils;
 
+import static org.bouncycastle.asn1.x500.style.RFC4519Style.cn;
+
 /**
  * 
  * The did module implement class,
